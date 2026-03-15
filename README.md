@@ -16,11 +16,10 @@ of cito, which can be installed via:
 devtools::install_github('citoverse/cito')
 ```
 
-You can install the development version of citoMove from
-[GitHub](https://github.com/) via:
+Then, install the provided R package file via
 
 ``` r
-devtools::install_github("citoverse/citoMove")
+install.packages(path_to_file, repos = NULL, type="source")
 ```
 
 # Example - analysis of a deer movement track
@@ -50,7 +49,7 @@ names(forest_dist) <- "forest_dist"
 plot(forest_dist)
 ```
 
-<img src="man/figures/README-unnamed-chunk-5-1.png" width="100%" />
+<img src="man/figures/README-unnamed-chunk-5-1.png" alt="" width="100%" />
 
 Next, we load the tracking data of one red deer individual. From amt
 documentation: 826 GPS relocations of one red deer from northern
@@ -83,7 +82,7 @@ model = dnn_ssf(case_ ~ forest_dist, data = dat_ssf, epoch = 30L, plot = T, verb
 #>   head.name    cito
 ```
 
-<img src="man/figures/README-unnamed-chunk-7-1.png" width="100%" />
+<img src="man/figures/README-unnamed-chunk-7-1.png" alt="" width="100%" />
 
 The plot that is produced visualizes the improvement of the model during
 training. The default architecture of the neural networks entails two
@@ -100,7 +99,7 @@ plot(model)
 #> generated.
 ```
 
-<img src="man/figures/README-unnamed-chunk-8-1.png" width="100%" />
+<img src="man/figures/README-unnamed-chunk-8-1.png" alt="" width="100%" />
 
 A summary of the fitted model is provided via
 
@@ -110,15 +109,15 @@ summary(model)
 #> 
 #> Feature Importance:
 #>      variable importance_1
-#> 1 forest_dist    0.1122311
+#> 1 forest_dist    0.1187801
 #> 
 #> Average Conditional Effects:
-#>               Response_1
-#> forest_dist 0.0004258009
+#>             Response_1
+#> forest_dist 0.02321981
 #> 
 #> Standard Deviation of Conditional Effects:
 #>             Response_1
-#> forest_dist  0.0081913
+#> forest_dist 0.04917218
 ```
 
 The cito package contains several options to create effect plots. Our
@@ -130,4 +129,4 @@ ALE(model)
 #> Number of Neighborhoods reduced to 3
 ```
 
-<img src="man/figures/README-unnamed-chunk-10-1.png" width="100%" />
+<img src="man/figures/README-unnamed-chunk-10-1.png" alt="" width="100%" />

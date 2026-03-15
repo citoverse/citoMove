@@ -1,6 +1,6 @@
 ---
 title: "Introduction to citoMove"
-author: "Thibault Fronville & Maximilian Pichler"
+author: "XXX"
 date: "March 05 2026"
 abstract: "'citoMove' allows you to prepare movement data (including biotic and abiotic interactions) and build neural networks (NN) using the 'cito' package"
 output: rmarkdown::html_vignette
@@ -15,15 +15,15 @@ editor_options:
 ```{r, include = FALSE}
 knitr::opts_chunk$set(
   collapse = TRUE,
-  comment = "#>"
+  comment = "#>",
+  fig.width=6, fig.height=5, fig.align='center', warning=FALSE, message=FALSE
 )
 ```
 
 
-
 # First steps
 
-Assuming you have citoMove installed (for instructions, see [here](https://github.com/citoverse/citoMove)), load the citoMove package via
+Assuming you have citoMove installed, load the citoMove package via
 
 ```{r}
 library(citoMove)

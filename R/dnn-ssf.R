@@ -20,7 +20,7 @@
 
 dnn_ssf <- function(formula, data, batchsize = 0.1, n_control = NULL, ...){
 
-  # Additional parameters # Aber das impliziert ja dass nur data.frames aus amt gefittet werden können?
+  # Additional parameters
 
   if(inherits(data, "random_steps")) n_control = attr(data, "n_control")
 

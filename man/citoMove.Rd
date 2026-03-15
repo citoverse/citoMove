@@ -12,20 +12,13 @@ The 'citoMove' package builds upon the the step selection function framework as 
 See index / vignette for details
 }
 \examples{
-vignette("citoMove", package="citoMove")
+vignette("Introduction", package="citoMove")
 }
 \seealso{
 \code{\link{dnn_ssf}}
 }
 \author{
-\strong{Maintainer}: Maximilian Pichler \email{maximilian.pichler@biologie.uni-regensburg.de} (\href{https://orcid.org/0000-0003-2252-8327}{ORCID})
-
-Authors:
-\itemize{
-  \item Thibault Fronville
-  \item Florian Hartig (\href{https://orcid.org/0000-0002-6255-9059}{ORCID})
-  \item Johannes Signer (\href{https://orcid.org/0000-0002-1771-7775}{ORCID})
-}
+\strong{Maintainer}: XXX XXX \email{XXX@XXX.de}
 
 }
 \keyword{internal}

@@ -3,22 +3,11 @@ Title: Fitting animal movement models with step-selection functions using deep l
 Version: 0.1.0
 Date: 2026-03-10
 Authors@R: 
-    c(person(given = "Thibault",
-           family = "Fronville",
-           role = c("aut")),
-      person(given = "Maximilian",
-           family = "Pichler",
-           role = c("aut", "cre"),
-           email = "maximilian.pichler@biologie.uni-regensburg.de",
-           comment = c(ORCID = "0000-0003-2252-8327")),
-      person(given = "Florian",
-             family = "Hartig",
-             role = "aut",
-             comment = c(ORCID = "0000-0002-6255-9059")),
-     person(given = "Johannes",
-             family = "Signer",
-             role = "aut", 
-            comment = c(ORCID = "0000-0002-1771-7775"))
+    c(person(given = "XXX",
+           family = "XXX",
+           email = "XXX@XXX.de",
+           role = c("aut", "cre")
+           )
            )
 Description: citoMove is a wrapper for the cito R package. The 'cito' package provides a user-friendly interface for training and interpreting deep neural networks (DNN). The citoMove package extends cito with an interface to fit a conditional logit (clogit) likelihood with the purpose of fitting step selection function (ssf) models of animal movement.
 License: GPL (>= 3)
@@ -40,6 +29,4 @@ Suggests:
     terra
 VignetteBuilder: knitr
 LazyData: true
-BugReports: https://github.com/citoverse/citomove/issues
-URL: https://citoverse.github.io/citomove/
 Language: en-US

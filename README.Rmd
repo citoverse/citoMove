@@ -1,5 +1,6 @@
 ---
-output: github_document
+output: 
+  pdf_document
 editor_options: 
   chunk_output_type: console
 ---
@@ -21,7 +22,7 @@ The goal of citoMove is to provide an user-friendly R package for analyzing move
 
 ## Installation
 
-The current version of citoMove depends on the **development** version of cito, which can be installed via:
+This version of citoMove depends on the **development** version of cito, which can be installed via:
 
 
 ```{r, eval = F}
@@ -29,64 +30,18 @@ The current version of citoMove depends on the **development** version of cito, 
 devtools::install_github('citoverse/cito')
 ```
 
-You can install the development version of citoMove from [GitHub](https://github.com/) via:
+Then, install the provided R package file via 
 
 ```{r, eval = F}
-devtools::install_github("citoverse/citoMove")
+install.packages("../citoMove_0.1.0.tar.gz", repos = NULL, type="source")
 ```
 
-# Example - analysis of a deer movement track
+of course changing the .. to the path on your computer.
+
+For a simple example of how to use the package, see
 
 ```{r}
-set.seed(123)
-library(amt)
-library(citoMove)
-library(terra)
+vignette("Introduction", package = "citoMove")
 ```
 
-The following code creates a spatial covariate: the distance to the next forest.
 
-```{r}
-forest <- amt::get_sh_forest()
-forest <- terra::subst(forest, 0, NA)
-forest_dist <- distance(forest)
-names(forest_dist) <- "forest_dist"
-plot(forest_dist)
-```
-
-Next, we load the tracking data of one red deer individual. From amt documentation: 826 GPS relocations of one red deer from northern Germany. The data is already resampled to a regular time interval of 6 hours and the coordinate reference system is transformed to epsg:3035.
-
-The follwoing code orders the data, creates random absences, and extract the environmental predictor (distance to forest) create before for all true and random steps. 
-
-```{r}
-dat_ssf <- amt::deer |> 
-  steps_by_burst() |> 
-  random_steps() |> 
-  extract_covariates(forest_dist) |> 
-  time_of_day() |> 
-  mutate(case_ = as.integer(case_))
-```
-
-Now, we can fit the deep neural network (dnn) using citoMove: 
-
-```{r}
-model = dnn_ssf(case_ ~ forest_dist, data = dat_ssf, epoch = 30L, plot = T, verbose = FALSE)
-```
-
-The plot that is produced visualizes the improvement of the model during training. The default architecture of the neural networks entails two hidden layers. We can visualize the architecture via 
-
-```{r, message=F}
-plot(model)
-```
-
-A summary of the fitted model is provided via 
-
-```{r}
-summary(model)
-```
-
-The cito package contains several options to create effect plots. Our current recommendation is to use accumulated local effect (ALE) plots to visualize the estimated selection effects
-
-```{r}
-ALE(model)
-```
