@@ -22,10 +22,14 @@ vignette("Introduction", package="citoMove")
 
 Authors:
 \itemize{
-  \item Maximilian Pichler \email{maximilian.pichler@biologie.uni-regensburg.de} (\href{https://orcid.org/0000-0003-2252-8327}{ORCID})
   \item Thibault Fronville
   \item Florian Hartig (\href{https://orcid.org/0000-0002-6255-9059}{ORCID})
   \item Johannes Signer (\href{https://orcid.org/0000-0002-1771-7775}{ORCID})
+}
+
+Other contributors:
+\itemize{
+  \item Mika Schubert [contributor]
 }
 
 }
